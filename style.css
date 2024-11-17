@@ -39,57 +39,34 @@ header {
     justify-content: stretch;
 }
 
+/* navbar */
 .navbar {
     background: rgba(0, 0, 0, 0.6);
     padding: 1.2rem;
 }
 
-/* The side navigation menu */
-.sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
-    left: 0;
-    background-color: #111; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-  }
-  
-  /* The navigation menu links */
-  .sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-  }
-  
-  /* When you mouse over the navigation links, change their color */
-  .sidenav a:hover {
-    color: #f1f1f1;
-  }
-  
-  /* Position and style the close button (top right corner) */
-  .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-  }
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
 .navbar-brand {
+    font-weight: bold;
     color: #fff;
     font-size: 2rem;
-    display: block;
-    text-align: center;
+    display: flex;
+    align-items: center;
     text-decoration: none;
     font-family: var(--Playfair);
     letter-spacing: 1px;
+    cursor: pointer;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: #f4b400;
 }
 
 .navbar-nav {
@@ -99,19 +76,68 @@ header {
 
 .navbar-nav a {
     text-transform: uppercase;
-    font-family: var(--Roboto);
+    font-family: var(--Playfair);
     letter-spacing: 1px;
     font-weight: 500;
     color: #fff;
     text-decoration: none;
     display: inline-block;
-    padding: 0.4rem 0.1rem;
+    padding: 0.4rem 1rem;
     letter-spacing: 3px;
     transition: opacity 0.5s ease;
 }
 
 .navbar-nav a:hover {
+    color: #f4b400;
     opacity: 0.7;
+}
+
+/* sidebar */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sidebar-icon {
+    margin-right: 10px;
+    margin-top: 8px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.sidebar-icon:hover {
+    color: #f4b400;
 }
 
 .banner {
@@ -183,16 +209,32 @@ header {
     padding: 0.6rem 0;
 }
 
+/* design-content modifications */
 .design-content {
+    display: flex;
+    justify-content: center;
+    /* Center items horizontally */
+    align-items: center;
+    /* Center items vertically */
     margin: 2rem 0;
+    height: 100%;
+    /* Ensure vertical centering */
 }
 
-.design-item {
+/* article-item */
+.design-item1 {
     cursor: pointer;
     margin: 1.5rem 0;
+    max-width: 600px;
+    padding: 2rem;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .design-img {
+
     position: relative;
     overflow: hidden;
 }
@@ -211,8 +253,8 @@ header {
     transition: all 0.5s ease;
 }
 
-.design-item:hover img {
-    transform: scale(1.2);
+.design-item1:hover img {
+    transform: scale(1.3);
 }
 
 .design-img span:first-of-type {
@@ -267,59 +309,73 @@ footer {
     padding: 2rem 0;
 }
 
-.social-links {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1.4rem;
+/* link social */
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 1rem 1rem;
 }
 
-.social-links a {
-    border: 2px solid #fff;
-    color: #fff;
-    display: block;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    text-decoration: none;
-    margin: 0 0.3rem;
-    transition: all 0.5s ease;
+.social-links i {
+    margin-right: 0.5rem;
+    font-size: 1.5rem;
 }
 
 .social-links a:hover {
-    background: #fff;
-    color: var(--exDark);
+    color: #f4b400;
 }
 
-.footer span {
-    margin-top: 1rem;
-    display: block;
-    font-family: var(--Playfair);
-    letter-spacing: 2px;
+footer .footer-tittle:hover {
+    color: #f4b400;
+}
+
+/* repsponsive */
+/* On smaller screens, adjust padding, font size */
+@media screen and (max-height: 480px) {
+    .navbar-brand {
+        font-size: 26px;
+    }
+
+    .sidebar-icon {
+        margin-bottom: 0px;
+        font-size: 16px;
+    }
+
+    .sidebar {
+        padding-top: 15px;
+    }
+
+    .sidebar a {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .navbar-nav {
+        display: none;
+    }
 }
 
 /* Media Queries */
 @media screen and (min-width: 768px) {
-    .navbar .container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
 
     .search-input {
         padding: 0.8rem 0;
     }
 
     .design-content {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem 0;
+        height: 90vh;
     }
 
-    .design-item {
-        margin: 0;
+    .design-item1 {
+        margin: 1rem;
     }
 }
 
